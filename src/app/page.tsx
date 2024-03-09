@@ -18,7 +18,7 @@ export default async function HomePage() {
             />
             <h2 className="inline-flex gap-2 text-lg font-bold">
               {/*<span>{restaurant.name}</span>*/}
-              <Link key={restaurant.id} href={`/${restaurant.id}`}>
+              <Link key={restaurant.id} href={`/${restaurant.id}`} prefetch={false}>
                 {restaurant.name}
               </Link>
               <small className="inline-flex gap-1">
