@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import api from "@/api";
 
-import SearchBox from "./components/SearchBox";
+import SearchBox from "./(index)/components/SearchBox";
 
 // export const dynamic = "force-dynamic"; // por defecto: auto
 
