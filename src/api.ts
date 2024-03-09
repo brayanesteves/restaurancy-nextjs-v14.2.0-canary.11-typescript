@@ -189,6 +189,19 @@ const api = {
     return restaurants;
   },
 
+  search: async (query: string): Promise<Restaurant[]> => {
+    // Obtenemos los restaurantes
+    const results = await api.list().then((restaurants) =>
+      // Los filtramos por nombre
+      restaurants.filter((restaurant) =>
+        restaurant.name.toLowerCase().includes(query.toLowerCase()),
+      ),
+    );
+
+    // Los retornamos
+    return results;
+  },
+
   list: async (): Promise<Restaurant[]> => {
     // Obtenemos la información de Google Sheets en formato texto y la dividimos por líneas, nos saltamos la primera línea porque es el encabezado
     const [, ...data] = await fetch(
